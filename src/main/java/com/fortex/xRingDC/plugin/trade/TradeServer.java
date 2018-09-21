@@ -121,7 +121,9 @@ public class TradeServer extends AbstractServer{
 						String pluginFilePath = System.getProperty("user.dir") + File.separator + "plugin" + File.separator
 								+ sessionID.getTargetCompID() + ".jar";
 						if (new File(pluginFilePath).exists()) {
-							PluginClassLoader.loadClass(pluginFilePath, sessionID);
+							if (SessionCache.getExecutionReportResponse(sessionID) == null) {
+								PluginClassLoader.loadClass(pluginFilePath, sessionID);
+							}
 							SessionCache.putSessionIdByUserName(s.getUserName(), sessionID);
 						}
 				     }

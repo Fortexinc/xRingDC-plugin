@@ -120,6 +120,9 @@ public class TradeAcceptorApplication extends AcceptorApplication {
 					String pluginFilePath = System.getProperty("user.dir") + File.separator + "plugin" + File.separator
 					+ sessionId.getTargetCompID() + ".jar";
 					if (new File(pluginFilePath).exists()) {
+						if (SessionCache.getExecutionReportResponse(sessionId) == null) {
+							PluginClassLoader.loadClass(pluginFilePath, sessionId);
+						}
 						PluginClassLoader.loadClass(pluginFilePath, sessionId);
 						SessionCache.putUserModelBySessionID(sessionId, user);
 						SessionCache.putSessionIdByUserName(userName, sessionId);
