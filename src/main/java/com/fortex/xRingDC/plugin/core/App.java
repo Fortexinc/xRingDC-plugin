@@ -35,31 +35,6 @@ public class App
 	}
     public static void main( String[] args ) throws Exception
     {
-    	//PluginManager  manager = PluginManager.getMgr();
-    	//manager.addExternalJar(System.getProperty("user.dir") + File.separator);
-    	//App app = new App();
-    	//app.start();
-    	/*
-    	ClassLoader parent = Thread.currentThread().getContextClassLoader();
-		
-		URL url1 = new File("E:\\program\\xRingDC\\xRingDC-plugin\\target\\plugin/xRingDC-plugin-impl-0.0.1-SNAPSHOT.jar").toURI().toURL();
-		URLClassLoader urlClassLoader1 = new URLClassLoader(new URL[]{url1}, parent);
-		Class<?> cls1 = urlClassLoader1.loadClass("com.fortex.xRingDC.plugin.impl.HelloImpl");
-		HelloWord h1 = (HelloWord)cls1.newInstance();
-		urlClassLoader1.close();
-		
-		URL url2 = new File("E:\\program\\xRingDC\\xRingDC-plugin\\target\\plugin/xRingDC-plugin-impl-0.0.2-SNAPSHOT.jar").toURI().toURL();
-		URLClassLoader urlClassLoader2 = new URLClassLoader(new URL[]{url2}, parent);
-		Class<?> cls2 = urlClassLoader2.loadClass("com.fortex.xRingDC.plugin.impl.HelloImpl");
-		HelloWord h2 = (HelloWord)cls2.newInstance();
-		urlClassLoader2.close();
-		
-		
-		h1.sayHello();
-		h2.sayHello();
-		h1.sayHello();
-    	*/
-    	
 		System.setProperty ("WORKDIR", ConfigSetting.getLocPath());
 		org.apache.log4j.PropertyConfigurator.configure(App.class.getResourceAsStream("/log4j.properties"));
 		FortexLogger.defaultLogger = Logger.getLogger("Event");
@@ -76,7 +51,6 @@ public class App
 		} catch (Exception e) {
 			Logger.getLogger("EventError").error(e.getMessage(), e);
 		}
-		
     }
     
     public static boolean isPortUsing(int port) throws UnknownHostException{

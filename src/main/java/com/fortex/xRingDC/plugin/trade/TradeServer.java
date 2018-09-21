@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.codehaus.plexus.util.FileUtils;
 
-import com.fortex.xRingDC.plugin.ClassLoader.PluginClassLoader;
 import com.fortex.xRingDC.plugin.cache.SessionCache;
 import com.fortex.xRingDC.plugin.core.AbstractServer;
+import com.fortex.xRingDC.plugin.core.PluginClassLoader;
 import com.fortex.xRingDC.plugin.db.DBOperation;
 import com.fortex.xRingDC.plugin.db.DropcopyQuery;
 import com.fortex.xRingDC.plugin.model.FortexMsg;
@@ -120,6 +120,7 @@ public class TradeServer extends AbstractServer{
 								DBOperation.getTargetIDByUserName(s.getUserName()));
 						String pluginFilePath = System.getProperty("user.dir") + File.separator + "plugin" + File.separator
 								+ sessionID.getTargetCompID() + ".jar";
+						
 						if (new File(pluginFilePath).exists()) {
 							if (SessionCache.getExecutionReportResponse(sessionID) == null) {
 								PluginClassLoader.loadClass(pluginFilePath, sessionID);
@@ -153,7 +154,7 @@ public class TradeServer extends AbstractServer{
 					boolean deleteAckedMsgOnly = "Y".equals(deleteAckedMsgOnlyStr);
 					
 					Logger.getLogger("Event").info("Start to retrieve execution report from database from seqno: " + seqnoStr + ", DeleteAckedMsgOnly Set to " + deleteAckedMsgOnlyStr);
-					//List<FortexMsg> list = DBOperation.getReportsBySeqno(seqNo, deleteAckedMsgOnly);
+					
 					List<ReportsTradeCapture> list = DBOperation.getReportsTradeCapture(seqNo, deleteAckedMsgOnly);
 					for (ReportsTradeCapture dbMsg : list) {
 						FortexMsg msg = new FortexMsg();
@@ -173,8 +174,7 @@ public class TradeServer extends AbstractServer{
 			} catch (IOException e) {
 				Logger.getLogger("EventError").error(e.getMessage(), e);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Logger.getLogger("EventError").error(e.getMessage(), e);
 			}
 		}
 	}
