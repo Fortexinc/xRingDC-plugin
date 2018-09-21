@@ -1,0 +1,190 @@
+<messages>
+<message type="header" number="0">
+	<field number="8" required="Y"/>
+	<field number="9" required="Y"/>
+	<field number="35" required="Y"/>
+	<field number="49" required="Y"/>
+	<field number="56" required="Y"/>
+	<field number="34" required="Y"/>
+	<field number="43" required="N"/>
+	<field number="52" required="Y"/>
+</message>
+<message type="Logon" number="A">
+	<field number="35" required="Y"/>
+	<field number="98" required="Y"/>
+	<field number="108" required="Y"/>
+	<field number="141" required="Y"/>
+	<field number="553" required="Y"/>
+	<field number="554" required="Y"/>
+</message>
+<message type="MarketDataRequest" number="V">
+	<field number="35" required="Y"/>
+	<field number="262" required="Y"/>
+	<field number="263" required="Y"/>
+	<field number="264" required="Y"/>
+	<field number="265" required="N"/>
+	<field number="267" required="Y">
+		<group>
+			<field number="269" required="Y"/>
+		</group>
+	</field>
+	<field number="146" required="Y">
+		<group>
+			<field number="55" required="Y"/>
+		</group>
+	</field>
+</message>
+<message type="NewOrderSingle" number="D">
+	<field number="35" required="Y"/>
+	<field number="1" required="Y"/>
+	<field number="11" required="Y"/>
+	<field number="40" required="Y"/>
+	<field number="44" required="N"/>
+	<field number="54" required="Y"/>
+	<field number="38" required="Y"/>
+	<field number="55" required="Y"/>
+	<field number="99" required="N"/>
+	<field number="640" required="N"/>
+	<field number="18" required="N"/>
+	<field number="167" required="Y"/>
+	<field number="59" required="Y"/>
+	<field number="60" required="Y"/>
+	<field number="21" required="Y" defaultVal="1"/>
+</message>
+<message type="OrderCancelReuqest" number="F">
+	<field number="35" required="Y"/>
+	<field number="11" required="Y"/>
+	<field number="41" required="Y"/>
+	<field number="1" required="Y"/>
+	<field number="40" required="Y"/>
+	<field number="54" required="Y"/>
+	<field number="38" required="Y"/>
+	<field number="55" required="Y"/>
+	<field number="167" required="Y"/>
+	<field number="60" required="Y"/>
+</message>
+<message type="OrderCancelReplaceReuqest" number="G">
+	<field number="35" required="Y"/>
+	<field number="11" required="Y"/>
+	<field number="41" required="Y"/>
+	<field number="1" required="Y"/>
+	<field number="40" required="Y"/>
+	<field number="54" required="Y"/>
+	<field number="38" required="Y"/>
+	<field number="14" required="Y"/>
+	<field number="55" required="Y"/>
+	<field number="44" required="N"/>
+	<field number="99" required="N"/>
+	<field number="640" required="N"/>
+	<field number="59" required="Y"/>
+	<field number="18" required="N"/>
+	<field number="167" required="Y"/>
+	<field number="21" required="Y" defaultVal="1"/>
+	<field number="60" required="Y"/>
+</message>
+<message type="Reject" number="3">
+	<field number="35" required="Y"/>
+	<field number="45" required="Y"/>
+	<field number="372" required="Y"/>
+	<field number="373" required="Y"/>
+	<field number="58" required="N"/>
+</message>
+<message type="BusinessMessageReject" number="j">
+	<field number="35" required="Y"/>
+	<field number="45" required="Y"/>
+	<field number="372" required="Y"/>
+	<field number="380" required="Y"/>
+	<field number="58" required="N"/>
+</message>
+<message type="MarketDataSnapshotFullRefresh" number="W">
+	<field number="35" required="Y"/>
+	<field number="55" required="Y"/>
+	<field number="262" required="N"/>
+	<field number="268" required="Y">
+		<group>
+			<field number="269" required="Y"/>
+			<field number="270" required="Y"/>
+			<field number="271" required="Y"/>
+		</group>
+	</field>
+</message>
+<message type="ExecutionReport" number="8">
+	<field number="35" required="Y"/>
+	<field number="39" required="Y"/>
+	<field number="150" required="Y"/>
+	<field number="37" required="Y"/>
+	<field number="17" required="Y"/>
+	<field number="18" required="N"/>
+	<field number="1" required="Y"/>
+	<field number="11" required="Y"/>
+	<field number="41" required="N"/>
+	<field number="40" required="Y"/>
+	<field number="59" required="N"/>
+	<field number="55" required="Y"/>
+	<field number="54" required="Y"/>
+	<field number="38" required="N"/>
+	<field number="44" required="N"/>
+	<field number="14" required="N"/>
+	<field number="12" required="N"/>
+	<field number="6" required="N"/>
+	<field number="9329" required="N"/>
+	<field number="151" required="N"/>
+	<field number="167" required="Y"/>
+	<field number="32" required="N"/>
+	<field number="31" required="N"/>
+	<field number="64" required="N"/>
+	<field number="75" required="N"/>
+	<field number="60" required="Y"/>
+	<field number="58" required="N"/>
+</message>
+<message type="OrderCancelReject" number="9">
+	<field number="35" required="Y"/>
+	<field number="39" required="Y"/>
+	<field number="37" required="Y"/>
+	<field number="11" required="Y"/>
+	<field number="41" required="Y"/>
+	<field number="1" required="N"/>
+	<field number="60" required="N"/>
+	<field number="102" required="N"/>
+	<field number="434" required="Y"/>
+</message>
+<message type="MarketDataRequestReject" number="Y">
+	<field number="35" required="Y"/>
+	<field number="262" required="Y"/>
+	<field number="281" required="Y"/>
+	<field number="58" required="Y"/>
+</message>
+
+
+<mapping field="58">
+	<text number="48" value="Reason Unknown"></text>
+	<text number="49" value="Not Logon"></text>
+	<text number="50" value="Destination Not Available"></text>
+	<text number="51" value="User Exceeding Permission Level"></text>
+	<text number="52" value="Order Not Found"></text>
+	<text number="53" value="No Shares To Sell"></text>
+	<text number="54" value="Can’t Short Downtick"></text>
+	<text number="55" value="Stock Unborrowable"></text>
+	<text number="56" value="Too Many Shares"></text>
+	<text number="57" value="Too Many Positions"></text>
+	<text number="97" value="Quote Not Available"></text>
+	<text number="98" value="Not Enough Buying Power"></text>
+	<text number="99" value="Rejected By Destination"></text>
+	<text number="100" value="Invalid Symbol"></text>
+	<text number="101" value="Time Limit Violation"></text>
+	<text number="102" value="Rejected By Admin"></text>
+	<text number="103" value="Exceeding Permission Level"></text>
+	<text number="104" value="Position Is Locked For Hedging"></text>
+	<text number="105" value="Position Not Hedged"></text>
+	<text number="106" value="Invalid Option Type"></text>
+	<text number="107" value="Invalid Strike Price"></text>
+	<text number="108" value="Incorrect To Open Or To Close"></text>
+	<text number="109" value="Bad Price"></text>
+	<text number="110" value="Order In Progress"></text>
+	<text number="111" value="Timed Out"></text>
+	<text number="112" value="No Liquidity"></text>
+	<text number="113" value="Duplicated Order ID"></text>
+</mapping>
+
+</messages>
+

@@ -1,0 +1,28 @@
+[
+	{
+		"userName" : "FIX_TEST17",
+		"lpLeg" : "Yes",
+		"clientLeg" : "Yes",
+		"clientLegChangeSide" : "Yes",
+		"filterByPB": ["*", "-Subscriber1"],
+		"filterByLP" : ["*", "-Subscriber1"],
+		"filterByDomain" : ["*", "-Subscriber1"],
+		"filterByAcct" : ["*", "-Subscriber1"],
+		"subscriberName": "Subscriber1",
+		"giveupBy": "LP",
+		"giveupAs": "FIX_TEST02"
+	},
+	{
+		"userName" : "FIX_TEST02",
+		"lpLeg" : "Yes",
+		"clientLeg" : "Yes",
+		"clientLegChangeSide" : "Yes",
+		"filterByPB": ["*", "-Subscribers2"],
+		"filterByLP" : ["*", "-Subscribers2"],
+		"filterByDomain" : ["*", "-Subscribers2"],
+		"filterByAcct" : ["*", "-Subscribers2"],
+		"subscriberName": "Subscribers2",
+		"giveupBy": "PB",
+		"giveupAs": "FIX_TEST02"
+	}
+]
