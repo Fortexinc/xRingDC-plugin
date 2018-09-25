@@ -20,6 +20,10 @@ public class SessionCache {
 		SESSIONID_EXECUTION_REPORT_RESPONSE_CACHE.put(sessionID, executionReportResponse);
 	}
 	
+	public static void removeExecutionReportResponse(SessionID sessionID) {
+		SESSIONID_EXECUTION_REPORT_RESPONSE_CACHE.remove(sessionID);
+	}
+	
 	public static BaseExecutionReportResponse getExecutionReportResponse(SessionID sessionID) {
 		return SESSIONID_EXECUTION_REPORT_RESPONSE_CACHE.get(sessionID);
 	} 

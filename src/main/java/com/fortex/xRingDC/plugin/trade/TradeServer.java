@@ -126,6 +126,10 @@ public class TradeServer extends AbstractServer{
 								PluginClassLoader.loadClass(pluginFilePath, sessionID);
 							}
 							SessionCache.putSessionIdByUserName(s.getUserName(), sessionID);
+						} else {
+							SessionCache.removeExecutionReportResponse(sessionID);
+							SessionCache.removeSessionId(sessionID);
+							SessionCache.removeSessionIdForUserName(sessionID);
 						}
 				     }
 					
